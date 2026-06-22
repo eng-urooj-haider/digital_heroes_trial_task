@@ -45,8 +45,8 @@ export default function DropZone({ onImageLoaded }) {
         id="dropzone-main"
       >
         <div className='flex gap-4'>
-          <span className=''>Name: Urooj Haider</span>        
-          <span className=''>Email: uroojh902@gmail.com</span>
+          <span >Name: Urooj Haider</span>        
+          <span >Email: uroojh902@gmail.com</span>
         </div>
         <div className="dropzone-icon-wrapper">
           <span className="dropzone-icon">🖼️</span>
