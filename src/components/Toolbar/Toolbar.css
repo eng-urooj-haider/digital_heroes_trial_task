@@ -1,0 +1,96 @@
+/* Toolbar.css */
+.toolbar {
+  width: var(--toolbar-width);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  gap: 4px;
+  border-right: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
+}
+
+.toolbar-section-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 4px 0 2px;
+  width: 100%;
+  text-align: center;
+}
+
+.toolbar-divider {
+  width: 32px;
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 6px 0;
+}
+
+.tool-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  transition: all var(--transition-fast);
+  position: relative;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.tool-btn:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+}
+
+.tool-btn.active {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: var(--accent-primary);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.2);
+}
+
+.tool-btn .tool-emoji {
+  font-size: 18px;
+  line-height: 1;
+  transition: transform var(--transition-fast);
+}
+
+.tool-btn:hover .tool-emoji {
+  transform: scale(1.15);
+}
+
+.tool-btn.active .tool-emoji {
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.tool-btn .tool-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
+}
+
+/* Color dot indicator */
+.tool-btn .tool-color-dot {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.4);
+}

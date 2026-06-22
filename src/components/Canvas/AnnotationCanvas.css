@@ -1,0 +1,128 @@
+/* AnnotationCanvas.css */
+.canvas-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-primary);
+  position: relative; /* anchors the text overlay textarea */
+}
+
+.canvas-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.canvas-container {
+  position: relative;
+  transform-origin: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 64px rgba(0,0,0,0.7), 0 0 0 1px var(--border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.canvas-base {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.canvas-annotations {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Cursor overrides */
+.canvas-annotations[data-tool="pen"]       { cursor: crosshair; }
+.canvas-annotations[data-tool="text"]      { cursor: text; }
+.canvas-annotations[data-tool="arrow"]     { cursor: crosshair; }
+.canvas-annotations[data-tool="rect"]      { cursor: crosshair; }
+.canvas-annotations[data-tool="ellipse"]   { cursor: crosshair; }
+.canvas-annotations[data-tool="line"]      { cursor: crosshair; }
+.canvas-annotations[data-tool="highlight"] { cursor: crosshair; }
+.canvas-annotations[data-tool="step"]      { cursor: copy; }
+.canvas-annotations[data-tool="pixelate"]  { cursor: cell; }
+.canvas-annotations[data-tool="redact"]    { cursor: cell; }
+.canvas-annotations[data-tool="blur"]      { cursor: cell; }
+
+/* Text Input Overlay */
+.text-input-overlay {
+  position: absolute;
+  border: 2px dashed var(--accent-primary);
+  border-radius: 4px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 6px 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  z-index: 10;
+  min-width: 100px;
+  min-height: 36px;
+  backdrop-filter: blur(4px);
+}
+
+/* Zoom Controls */
+.zoom-controls {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  z-index: 20;
+}
+
+.zoom-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.zoom-btn:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.zoom-value {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 42px;
+  text-align: center;
+}
+
+/* Preview ghost while drawing */
+.drawing-preview {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
